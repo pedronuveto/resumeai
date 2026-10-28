@@ -1,0 +1,8 @@
+# chave da API
+config.js
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,4 @@
+const CONFIG = {
+  GEMINI_API_KEY: "CHAVE_GEMINI_AQUI",
+  USAR_PLANO_B: false,
+};
