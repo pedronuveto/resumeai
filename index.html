@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ResumeAí</title>
+  <meta name="description" content="Resumidor de textos em português com inteligência artificial.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>ResumeAí</h1>
+    <p>Cole um texto em português, escolha o tipo e o tamanho e receba um resumo gerado por IA.</p>
+  </header>
+
+  <main class="conteudo">
+    <form id="form-resumo" class="formulario" novalidate>
+      <label for="texto">Texto para resumir</label>
+      <textarea
+        id="texto"
+        name="texto"
+        rows="10"
+        maxlength="10000"
+        placeholder="Cole aqui o texto (mínimo de 30 palavras)..."
+        aria-describedby="contador aviso-privacidade"></textarea>
+      <p id="contador" class="contador">0 / 10.000 caracteres · 0 palavras</p>
+
+      <div class="opcoes">
+        <div class="campo">
+          <label for="tipo">Tipo de resumo</label>
+          <select id="tipo" name="tipo">
+            <option value="paragrafo">Parágrafo</option>
+            <option value="topicos">Tópicos</option>
+            <option value="estudo">Para estudo</option>
+            <option value="simples">Explicação simples</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="tamanho">Tamanho</label>
+          <select id="tamanho" name="tamanho">
+            <option value="curto">Curto</option>
+            <option value="medio" selected>Médio</option>
+            <option value="longo">Longo</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" id="btn-resumir" class="botao">Resumir</button>
+      <p id="aviso-privacidade" class="aviso">
+        Não cole dados pessoais: o texto é enviado ao Google Gemini.
+      </p>
+    </form>
+
+    <section class="resultado" aria-labelledby="titulo-resultado" aria-live="polite">
+      <h2 id="titulo-resultado">Resultado</h2>
+      <p id="mensagem" class="mensagem">O resumo aparecerá aqui.</p>
+      <div id="resumo" class="resumo" hidden></div>
+      <p id="estatisticas" class="estatisticas" hidden></p>
+      <button type="button" id="btn-copiar" class="botao botao-secundario" hidden>Copiar resumo</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Projeto da disciplina Desenvolvimento de Sistemas Web · UFMA · 2026.2</p>
+  </footer>
+
+  <!-- config.js tem a chave e fica fora do git -->
+  <script src="config.js"></script>
+  <script src="respostaExemplo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
